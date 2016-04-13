@@ -15,11 +15,11 @@ Get the project from GitHub
 
 * Create a local directory for the project
 
-        mkdir LiteEngine && cd LiteEngine
+        mkdir LiteEngine2D && cd LiteEngine2D
     
 * Clone the project
 
-        git clone https://github.com/maritim/LiteEngine
+        git clone https://github.com/maritim/LiteEngine2D
 
 Install and configure dependecies
 --------------------
@@ -38,4 +38,4 @@ Build
         
 * Run the application using a prototype scene
 
-        ./LiteEngine.out
+        ./LiteEngine2D.out
