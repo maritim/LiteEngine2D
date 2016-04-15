@@ -14,17 +14,17 @@ function InstallDependency
 }
 
 if [[ `uname` == "Linux" ]]; then
-	dep_ubuntu="libsdl-image1.2-dev libsdl1.2-dev"
+	dep_ubuntu="libsdl2-image-dev libsdl2-dev"
 
 	length=$(echo $dep_ubuntu | wc -w)
 
 	for pkg in $dep_ubuntu; do
-	    if hash ${pkg} 2>/dev/null; then
+	    #if hash ${pkg} 2>/dev/null; then
 		    echo "Installing ${pkg}..."
 		    InstallDependency ${pkg}
-		else
-			echo "${pkg} already installed. Do nothing."
-		fi
+		#else
+		#	echo "${pkg} already installed. Do nothing."
+		#fi
 	done
 
 elif [[ `uname` == "Darwin"* ]]; then
@@ -33,7 +33,7 @@ elif [[ `uname` == "Darwin"* ]]; then
 		echo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 
-	dep_apple = "sdl sdl_image"
+	dep_apple = "sdl2 sdl2_image"
 
 	length = $(echo $dep_apple | wc -w)
 
