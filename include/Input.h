@@ -3,9 +3,9 @@
 
 #include "Vector2.h"
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__APPLE__)
 	#include <SDL2/SDL.h>
-#elif _Win32 || __APPLE__
+#elif _WIN32
 	#include <SDL.h>
 #endif
 

@@ -1,32 +1,32 @@
-#include "Time.h"
+#include "GameTime.h"
 
-Uint32 Time::_currentTimeMS (0);
-Uint32 Time::_deltaTimeMS (0);
+uint32_t GameTime::_currentTimeMS (0);
+uint32_t GameTime::_deltaTimeMS (0);
 
-float Time::GetDeltaTime()
+float GameTime::GetDeltaTime()
 {
 	return _deltaTimeMS / 1000.0f;
 }
 
-float Time::GetTime()
+float GameTime::GetTime()
 {
 	return _currentTimeMS;
 }
 
-void Time::Init() 
+void GameTime::Init()
 {
 	_currentTimeMS = SDL_GetTicks();
 }
 
-void Time::UpdateFrame()
+void GameTime::UpdateFrame()
 {
-	Uint32 lastTimeMS = _currentTimeMS;
+	uint32_t lastTimeMS = _currentTimeMS;
 	_currentTimeMS = SDL_GetTicks();
 
 	_deltaTimeMS = _currentTimeMS - lastTimeMS;
 }
 
-unsigned int Time::GetDeltaTimeMS ()
+unsigned int GameTime::GetDeltaTimeMS ()
 {
 	return _deltaTimeMS;
 }
@@ -35,7 +35,7 @@ unsigned int Time::GetDeltaTimeMS ()
  * Get ticks since the start of the game until the start of current frame.
 */
 
-unsigned int Time::GetTimeMS ()
+unsigned int GameTime::GetTimeMS ()
 {
 	return _currentTimeMS;
 }
@@ -44,7 +44,7 @@ unsigned int Time::GetTimeMS ()
  * Get ticks since the start of the game until the current moment.
 */
 
-unsigned int Time::GetElapsedTimeMS ()
+unsigned int GameTime::GetElapsedTimeMS ()
 {
 	return SDL_GetTicks ();
 }

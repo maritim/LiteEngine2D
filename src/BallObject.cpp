@@ -4,7 +4,7 @@
 
 #include "Screen.h"
 #include "Input.h"
-#include "Time.h"
+#include "GameTime.h"
 #include "Vector2.h"
 
 #include <cstdlib>
@@ -69,5 +69,5 @@ void BallObject::Update ()
 
 	velocity.Normalize ();
 
-	_position += velocity * _speed * Time::GetDeltaTime ();
+	_position += velocity * _speed * GameTime::GetDeltaTime ();
 }

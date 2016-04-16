@@ -1,6 +1,6 @@
 #include "Game.h"
 
-#include "Time.h"
+#include "GameTime.h"
 #include "Input.h"
 #include "Screen.h"
 
@@ -12,7 +12,7 @@ Game::Game ()
 {
 	_currentScene = new Scene ();
 
-	Time::Init();
+	GameTime::Init();
 }
 
 Game::~Game ()
@@ -35,7 +35,7 @@ void Game::Start ()
 	{
 		Screen::Clear ();
 
-		Time::UpdateFrame ();
+		GameTime::UpdateFrame ();
 		Input::UpdateState ();
 
         if (Input::GetQuit () || Input::GetKeyDown (27)) {
@@ -52,8 +52,8 @@ void Game::Start ()
 
 		Screen::Render ();
 
-		if(TICKS_PER_FRAME > Time::GetElapsedTimeMS () - Time::GetTimeMS ()) {
-			SDL_Delay(TICKS_PER_FRAME - (Time::GetElapsedTimeMS () - Time::GetTimeMS ()));
+		if(TICKS_PER_FRAME > GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()) {
+			SDL_Delay(TICKS_PER_FRAME - (GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()));
 		}
 	}
 }

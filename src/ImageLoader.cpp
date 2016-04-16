@@ -1,8 +1,8 @@
 #include "ImageLoader.h"
 
-#ifdef _WIN32 || __APPLE__
+#ifdef _WIN32
 	#include <SDL_image.h>
-#elif __linux__
+#elif defined(__linux__) || defined(__APPLE__)
 	#include <SDL2/SDL_image.h>
 #endif
 

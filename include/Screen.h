@@ -1,9 +1,9 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__APPLE__)
 	#include <SDL2/SDL.h>
-#elif _WIN32 || __APPLE__
+#elif _WIN32
 	#include <SDL.h>
 #endif
 
