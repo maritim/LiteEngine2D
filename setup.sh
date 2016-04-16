@@ -16,34 +16,32 @@ function InstallDependency
 if [[ `uname` == "Linux" ]]; then
 	dep_ubuntu="libsdl2-image-dev libsdl2-dev"
 
-	length=$(echo $dep_ubuntu | wc -w)
-
 	for pkg in $dep_ubuntu; do
-	    #if hash ${pkg} 2>/dev/null; then
-		    echo "Installing ${pkg}..."
-		    InstallDependency ${pkg}
-		#else
-		#	echo "${pkg} already installed. Do nothing."
-		#fi
+		if dpkg -l "$pkg" &> /dev/null; then
+			echo "Package '$pkg' already installed. Do nothing."
+		else
+			echo "Package '$pkg' is not installed. Installing..."
+			InstallDependency $pkg
+		fi
 	done
 
 elif [[ `uname` == "Darwin"* ]]; then
 
 	if hash brew 2>/dev/null; then
+		echo "Package brew is not installed. Installing..."
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 
+	echo "Package brew is updating..."
 	brew update
 
 	dep_apple="sdl2 sdl2_image"
 
-	length=$(echo $dep_apple | wc -w)
-
 	for pkg in $dep_apple; do
 	    if brew list -1 | grep -q "^${pkg}\$"; then
-			echo "${pkg} already installed. Do nothing."
+			echo "Package '$pkg' already installed. Do nothing."
 		else
-			echo "Installing ${pkg}..."
+			echo "Package '$pkg' is not installed. Installing..."
 			brew install --yes ${pkg}
 		fi
 	done
