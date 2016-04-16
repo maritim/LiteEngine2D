@@ -1,5 +1,5 @@
-#ifndef SCREEN_H
-#define SCREEN_H
+#ifndef WINDOW_H
+#define WINDOW_H
 
 #ifdef __linux__
 	#include <SDL2/SDL.h>
@@ -9,21 +9,19 @@
 
 #include <cstddef>
 
-#include "Image.h"
-#include "Vector2.h"
-
-class Screen
+class Window
 {
 private:
-	static SDL_Surface* _surface;
+	static SDL_Window* _window;
+	static SDL_Renderer* _renderer;
+	static SDL_Texture* _texture;
 
 public:
 	static void Init ();
 	static void Quit (); 
 
-	static void Draw (Image* image, const Vector2& pos);
-
-	static void Render ();
+	// TODO: Kill it with fire
+	static void Render (SDL_Surface* surface);
 	static void Clear ();
 
 	static std::size_t GetWidth ();

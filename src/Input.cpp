@@ -1,11 +1,5 @@
 #include "Input.h"
 
-#ifdef __linux__
-	#include <SDL/SDL.h>
-#elif __MINGW32__
-	#include <SDL.h>
-#endif
-
 bool Input::_keyState[256];
 bool Input::_lastKeyState[256];
 bool Input::_lastMouseState[4];
@@ -34,10 +28,10 @@ void Input::UpdateState ()
 			case SDL_QUIT:
 				_sdlQuit = true;
 				break;
-			case SDL_VIDEORESIZE :
-				_resizeEvent.SetX (event.resize.w);
-				_resizeEvent.SetY (event.resize.h);
-				break;
+			// case SDL_VIDEORESIZE :
+			// 	_resizeEvent.SetX (event.resize.w);
+			// 	_resizeEvent.SetY (event.resize.h);
+			// 	break;
             case SDL_KEYDOWN:
             	_keyState [(int)event.key.keysym.sym] = true;
             	break;

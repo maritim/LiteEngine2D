@@ -2,8 +2,8 @@
 #define IMAGE_H
 
 #ifdef __linux__
-	#include <SDL/SDL.h>
-#elif __MINGW32__
+	#include <SDL2/SDL.h>
+#elif _WIN32 || __APPLE__
 	#include <SDL.h>
 #endif
 

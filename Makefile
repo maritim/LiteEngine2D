@@ -1,5 +1,5 @@
 # Project Name (executable)
-PROJECT = LiteEngine.out
+PROJECT = LiteEngine2D.out
 # Compiler
 CC = g++
 
@@ -12,7 +12,7 @@ COMPILE_OPTIONS = -g0 -march=native -mtune=native -funroll-loops -Ofast -fno-mat
 #Header include directories
 HEADERS = -Iinclude -I/usr/local/include
 #Libraries for linking
-LIBS = `sdl-config --libs` -lSDL_image
+LIBS = -lSDL2 -lSDL2_image
 
 # Dependency options
 DEPENDENCY_OPTIONS = -MM -std=c++11 $(HEADERS)

@@ -18,7 +18,7 @@ BallObject::BallObject () :
 	_image = Resources::LoadImage ("Assets/Images/Ball.png");
 
 	// This need to be deleted too
-	_position = Vector2 (rand () %720, rand () % 480);
+	_position = Vector2 (rand () % Screen::GetWidth (), rand () % Screen::GetHeight ());
 }
 
 BallObject::~BallObject ()

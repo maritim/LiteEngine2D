@@ -1,13 +1,18 @@
 #include "Screen.h"
 
-#define WINDOW_WIDTH 1280
-#define WINDOW_HEIGHT 720
+#include "Window.h"
 
 SDL_Surface* Screen::_surface (nullptr);
 
 void Screen::Init ()
 {
-	_surface = SDL_SetVideoMode( WINDOW_WIDTH, WINDOW_HEIGHT, 0, SDL_HWSURFACE | SDL_DOUBLEBUF );
+	Window::Init ();
+
+	std::size_t width = Window::GetWidth ();
+	std::size_t height = Window::GetHeight ();
+
+	_surface = SDL_CreateRGBSurface(0, width, height, 32,
+		0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
 }
 
 void Screen::Quit ()
@@ -32,9 +37,9 @@ void Screen::Draw (Image* image, const Vector2& pos)
 	SDL_BlitSurface(image->GetSurface (), NULL, _surface, &destination);
 }
 
-void Screen::Flip ()
+void Screen::Render ()
 {
-	SDL_Flip (_surface);
+	Window::Render (_surface);
 }
 
 std::size_t Screen::GetWidth ()

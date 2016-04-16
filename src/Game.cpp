@@ -50,7 +50,7 @@ void Game::Start ()
 		_currentScene->Update ();
 		_currentScene->Display ();
 
-		Screen::Flip ();
+		Screen::Render ();
 
 		if(TICKS_PER_FRAME > Time::GetElapsedTimeMS () - Time::GetTimeMS ()) {
 			SDL_Delay(TICKS_PER_FRAME - (Time::GetElapsedTimeMS () - Time::GetTimeMS ()));
