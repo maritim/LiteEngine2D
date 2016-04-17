@@ -41,7 +41,7 @@ void Input::UpdateState ()
 				_keyState[(int)event.key.keysym.sym] = true;
             	break;
             case SDL_KEYUP:
-				if ((int)event.key.keysym.sym < KEYS_COUNT) {
+				if ((int)event.key.keysym.sym >= KEYS_COUNT) {
 					break;
 				}
 				_keyState[(int)event.key.keysym.sym] = true;
