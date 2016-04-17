@@ -1,13 +1,13 @@
 #ifndef GAMETIME_H
 #define GAMETIME_H
 
-#include <stdint.h>
-
 #if defined(__linux__) || defined(__APPLE__)
 	#include <SDL2/SDL.h>
-#elif _Win32
+#elif defined(_WIN32)
 	#include <SDL.h>
 #endif
+
+#include <stdint.h>
 
 class GameTime
 {

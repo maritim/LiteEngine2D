@@ -2,8 +2,8 @@
 
 #if defined(__linux__) || defined(__APPLE__)
 	#include <SDL2/SDL.h>
-#elif _WIN32
-#include <SDL.h>
+#elif defined(_WIN32)
+    #include <SDL.h>
 #endif
 
 #include "Screen.h"
@@ -16,7 +16,7 @@ void GameEngine::Init ()
 }
 
 void GameEngine::Quit ()
-{	
+{
 	Screen::Quit ();
 
 	SDL_Quit();

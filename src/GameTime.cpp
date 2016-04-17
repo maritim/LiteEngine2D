@@ -40,7 +40,7 @@ unsigned int GameTime::GetTimeMS ()
 	return _currentTimeMS;
 }
 
-/* 
+/*
  * Get ticks since the start of the game until the current moment.
 */
 

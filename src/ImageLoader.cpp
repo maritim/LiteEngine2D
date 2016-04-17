@@ -7,12 +7,19 @@
 #endif
 
 #include <string>
+#include <iostream>
 
 #include "Image.h"
 
 Object* ImageLoader::Load(const std::string& filename)
 {
 	SDL_Surface* img=IMG_Load(filename.c_str());
+
+	if (!img)
+	{
+		std::cout << "Image \"" << filename << "\" failed to load. Program closed!";
+		//exit(0);
+	}
 
 	Image* image = new Image(img, filename);
 

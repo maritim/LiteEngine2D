@@ -1,5 +1,11 @@
 #include "Game.h"
 
+#if defined(__linux__) || defined(__APPLE__)
+	#include <SDL2/SDL.h>
+#elif defined(_WIN32)
+	#include <SDL.h>
+#endif
+
 #include "GameTime.h"
 #include "Input.h"
 #include "Screen.h"
@@ -17,7 +23,7 @@ Game::Game ()
 
 Game::~Game ()
 {
-	
+
 }
 
 Game* Game::Instance ()

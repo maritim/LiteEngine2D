@@ -33,30 +33,30 @@ void BallObject::Draw ()
 
 void BallObject::Update ()
 {
-	// Uncomment this to switch the controls of the ball to keyboard
+//	 Uncomment this to switch the controls of the ball to keyboard
 
-	// Vector2 velocity = Vector2::Zero;
-
-	// if (Input::GetKey ('w')) {
-	// 	velocity += Vector2::Up;
-	// }
-	// if (Input::GetKey ('d')) {
-	// 	velocity += Vector2::Right;
-	// }
-	// if (Input::GetKey ('s')) {
-	// 	velocity += Vector2::Down;
-	// }
-	// if (Input::GetKey ('a')) {
-	// 	velocity += Vector2::Left;
-	// }
-
-	// if (velocity == Vector2::Zero) {
-	// 	return;
-	// }
-
-	// velocity.Normalize ();
-
-	// _position += velocity * _speed * Time::GetDeltaTime (); 
+//	 Vector2 velocity = Vector2::Zero;
+//
+//	 if (Input::GetKey ('w')) {
+//	 	velocity += Vector2::Up;
+//	 }
+//	 if (Input::GetKey ('d')) {
+//	 	velocity += Vector2::Right;
+//	 }
+//	 if (Input::GetKey ('s')) {
+//	 	velocity += Vector2::Down;
+//	 }
+//	 if (Input::GetKey ('a')) {
+//	 	velocity += Vector2::Left;
+//	 }
+//
+//	 if (velocity == Vector2::Zero) {
+//	 	return;
+//	 }
+//
+//	 velocity.Normalize ();
+//
+//	 _position += velocity * _speed * GameTime::GetDeltaTime ();
 
 	_destination = Input::GetMousePosition ();
 	_destination.SetY (Screen::GetHeight () - _destination.GetY ());

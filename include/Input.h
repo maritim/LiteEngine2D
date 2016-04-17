@@ -5,15 +5,17 @@
 
 #if defined(__linux__) || defined(__APPLE__)
 	#include <SDL2/SDL.h>
-#elif _WIN32
+#elif defined(_WIN32)
 	#include <SDL.h>
 #endif
+
+#define KEYS_COUNT (1<<16)
 
 class Input
 {
 private:
-	static bool _keyState[256];
-	static bool _lastKeyState[256];
+	static bool _keyState[KEYS_COUNT];
+	static bool _lastKeyState[KEYS_COUNT];
 	static bool _lastMouseState[4];
 	static bool _mouseState[4];
 	static bool _sdlQuit;

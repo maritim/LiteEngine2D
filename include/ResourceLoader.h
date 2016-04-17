@@ -8,7 +8,7 @@
 class ResourceLoader
 {
 public:
-	virtual Object* Load(const std::string& fileName) = 0;	
+	virtual Object* Load(const std::string& fileName) = 0;
 };
 
 #endif

@@ -3,7 +3,7 @@
 
 #if defined(__linux__ )|| defined(__APPLE__)
 	#include <SDL2/SDL.h>
-#elif _WIN32
+#elif defined(_WIN32)
 	#include <SDL.h>
 #endif
 
@@ -18,7 +18,7 @@ private:
 
 public:
 	static void Init ();
-	static void Quit (); 
+	static void Quit ();
 
 	// TODO: Kill it with fire
 	static void Render (SDL_Surface* surface);

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="LiteEngine2D" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/LiteEngine2D" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add directory="../../include" />
+					<Add directory="lib/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
+					<Add directory="lib/SDL2-2.0.4/i686-w64-mingw32/include/SDL2" />
+				</Compiler>
+				<Linker>
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_Image" />
+					<Add directory="lib/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
+					<Add directory="lib/SDL2-2.0.4/lib/x86" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/LiteEngine2D" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add directory="../../include" />
+					<Add directory="lib/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
+					<Add directory="lib/SDL2-2.0.4/i686-w64-mingw32/include/SDL2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_Image" />
+					<Add directory="lib/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
+					<Add directory="lib/SDL2-2.0.4/lib/x86" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="../../include/BallObject.h" />
+		<Unit filename="../../include/Game.h" />
+		<Unit filename="../../include/GameEngine.h" />
+		<Unit filename="../../include/GameTime.h" />
+		<Unit filename="../../include/Image.h" />
+		<Unit filename="../../include/ImageLoader.h" />
+		<Unit filename="../../include/Input.h" />
+		<Unit filename="../../include/Object.h" />
+		<Unit filename="../../include/ResourceLoader.h" />
+		<Unit filename="../../include/Resources.h" />
+		<Unit filename="../../include/Scene.h" />
+		<Unit filename="../../include/SceneObject.h" />
+		<Unit filename="../../include/Screen.h" />
+		<Unit filename="../../include/Vector2.h" />
+		<Unit filename="../../include/Window.h" />
+		<Unit filename="../../src/BallObject.cpp" />
+		<Unit filename="../../src/Game.cpp" />
+		<Unit filename="../../src/GameEngine.cpp" />
+		<Unit filename="../../src/GameTime.cpp" />
+		<Unit filename="../../src/Image.cpp" />
+		<Unit filename="../../src/ImageLoader.cpp" />
+		<Unit filename="../../src/Input.cpp" />
+		<Unit filename="../../src/Object.cpp" />
+		<Unit filename="../../src/Resources.cpp" />
+		<Unit filename="../../src/Scene.cpp" />
+		<Unit filename="../../src/SceneObject.cpp" />
+		<Unit filename="../../src/Screen.cpp" />
+		<Unit filename="../../src/Vector2.cpp" />
+		<Unit filename="../../src/Window.cpp" />
+		<Unit filename="../../src/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

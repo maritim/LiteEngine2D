@@ -3,8 +3,8 @@
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 720
 
-#define X_POSITION 0
-#define Y_POSITION 0
+#define X_POSITION 100
+#define Y_POSITION 100
 
 #define WINDOW_FLAGS SDL_WINDOW_SHOWN
 

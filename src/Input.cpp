@@ -1,7 +1,9 @@
 #include "Input.h"
 
-bool Input::_keyState[256];
-bool Input::_lastKeyState[256];
+#define KEYS_COUNT (1<<16)
+
+bool Input::_keyState[KEYS_COUNT];
+bool Input::_lastKeyState[KEYS_COUNT];
 bool Input::_lastMouseState[4];
 bool Input::_mouseState[4];
 bool Input::_sdlQuit (false);
@@ -33,14 +35,20 @@ void Input::UpdateState ()
 			// 	_resizeEvent.SetY (event.resize.h);
 			// 	break;
             case SDL_KEYDOWN:
-            	_keyState [(int)event.key.keysym.sym] = true;
+				if ((int)event.key.keysym.sym >= KEYS_COUNT) {
+					break;
+				}
+				_keyState[(int)event.key.keysym.sym] = true;
             	break;
             case SDL_KEYUP:
-            	_keyState [(int)event.key.keysym.sym] = false;
+				if ((int)event.key.keysym.sym < KEYS_COUNT) {
+					break;
+				}
+				_keyState[(int)event.key.keysym.sym] = true;
                 break;
             case SDL_MOUSEBUTTONDOWN:
 				_mouseState [(int)event.button.button] = true;
-				break; 
+				break;
 			case SDL_MOUSEBUTTONUP:
 				_mouseState [(int)event.button.button] = false;
 				break;
@@ -85,8 +93,8 @@ Vector2 Input::GetMousePosition ()
 	SDL_GetMouseState(&x, &y);
 
 	Vector2 position;
-	position.SetX (x);
-	position.SetY (y);
+	position.SetX ((float) x);
+	position.SetY ((float) y);
 
 	return position;
 }

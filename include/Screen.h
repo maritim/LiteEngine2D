@@ -3,7 +3,7 @@
 
 #if defined(__linux__) || defined(__APPLE__)
 	#include <SDL2/SDL.h>
-#elif _WIN32
+#elif defined(_WIN32)
 	#include <SDL.h>
 #endif
 
@@ -19,7 +19,7 @@ private:
 
 public:
 	static void Init ();
-	static void Quit (); 
+	static void Quit ();
 
 	static void Draw (Image* image, const Vector2& pos);
 
