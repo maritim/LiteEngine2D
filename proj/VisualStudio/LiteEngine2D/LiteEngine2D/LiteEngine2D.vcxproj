@@ -71,26 +71,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir)depend/include;$(SolutionDir)../../../include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)depend/lib/x86;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Bin</OutDir>
-    <IntDir>$(SolutionDir)Build</IntDir>
+    <OutDir>$(SolutionDir)Bin\</OutDir>
+    <IntDir>$(SolutionDir)Build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)depend/include;$(SolutionDir)../../../include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)depend/lib/x86;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Bin</OutDir>
-    <IntDir>$(SolutionDir)Build</IntDir>
+    <OutDir>$(SolutionDir)Bin\</OutDir>
+    <IntDir>$(SolutionDir)Build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)depend/include;$(SolutionDir)../../../include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)depend/lib/x64;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Bin64</OutDir>
-    <IntDir>$(SolutionDir)Build64</IntDir>
+    <OutDir>$(SolutionDir)Bin64\</OutDir>
+    <IntDir>$(SolutionDir)Build64\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir)depend/include;$(SolutionDir)../../../include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)depend/lib/x64;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Bin64</OutDir>
-    <IntDir>$(SolutionDir)Build64</IntDir>
+    <OutDir>$(SolutionDir)Bin64\</OutDir>
+    <IntDir>$(SolutionDir)Build64\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
