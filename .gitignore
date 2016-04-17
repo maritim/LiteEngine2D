@@ -11,16 +11,9 @@
 *.gch
 *.pch
 
-# Compiled Static Libraries
-*.lai
-*.la
-*.a
-*.lib
-
 # Compiled Dynamic Libraries
 *.so
 *.dylib
-*.dll
 
 # Dependency files
 *.d
