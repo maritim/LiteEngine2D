@@ -3,13 +3,22 @@ LiteEngine2D
 
 Lite 2D Game Engine
 
-Unix Install Guide
-=================
+## Table of contents
+
+* [Download](#get-the-project-from-github)
+* [Dependencies](#install-and-configure-dependecies)
+* [Development](#development)
 
 Get the project from GitHub
---------------------
+===========================
 
-* Install git
+### Interface
+
+* Download the entire project as a **.zip** archive from the top-right button
+
+### Command line
+
+* Install git 
 
         sudo apt-get install -y git
 
@@ -19,23 +28,43 @@ Get the project from GitHub
     
 * Clone the project
 
-        git clone https://github.com/maritim/LiteEngine2D
+        git clone https://github.com/maritim/LiteEngine2D 
 
 Install and configure dependecies
---------------------
+===============================
+
+### Windows
+
+* The project already contain all the dependencies needed
+
+### Linux and OS X
 
 * Install dependecies
 
         sudo chmod +x setup.sh
         sudo ./setup.sh
     
-Build
------
+Development
+================
+
+### Code::Blocks
+
+* Open the project inside the **proj/CodeBlocks** folder
+
+### Microsoft Visual Studio
+
+* Open the project inside the **proj/VisualStudio** folder
+
+### Xcode
+
+* Open the project inside the **proj/Xcode** folder
+
+### Linux Command Line
 
 * Compile the project
 
         make
         
-* Run the application using a prototype scene
+* Run the application
 
         ./LiteEngine2D.out
