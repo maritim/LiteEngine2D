@@ -6,17 +6,19 @@ Lite 2D Game Engine
 ## Table of contents
 
 * [Download](#get-the-project-from-github)
-* [Dependencies](#install-and-configure-dependecies)
-* [Development](#development)
+* [Install dependencies](#install-and-configure-dependecies)
+* [Development environments](#development-environments)
 
 Get the project from GitHub
 ===========================
 
-### Interface
+Directly from this page
+------------------------
 
 * Download the entire project as a **.zip** archive from the top-right button
 
-### Command line
+Using command line
+-------------------
 
 * Install git 
 
@@ -33,33 +35,39 @@ Get the project from GitHub
 Install and configure dependecies
 ===============================
 
-### Windows
+Windows platform 
+------------------------
 
-* The project already contain all the dependencies needed
+* The projects already contains all the dependencies needed
 
-### Linux and OS X
+Linux and OS X
+--------------------------
 
-* Install dependecies
+* Install dependecies from command line
 
         sudo chmod +x setup.sh
         sudo ./setup.sh
     
-Development
+Development environments
 ================
 
-### Code::Blocks
+Code::Blocks
+------------------
 
 * Open the project inside the **proj/CodeBlocks** folder
 
-### Microsoft Visual Studio
+Microsoft Visual Studio
+--------------------------
 
 * Open the project inside the **proj/VisualStudio** folder
 
-### Xcode
+Xcode
+---------------------
 
 * Open the project inside the **proj/Xcode** folder
 
-### Linux Command Line
+Linux Command Line
+----------------------
 
 * Compile the project
 
