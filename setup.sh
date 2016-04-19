@@ -9,7 +9,7 @@ function InstallDependency
 	elif [ -f /etc/fedora-ralease ]; then
 		sudo yum install $1
 	else
-		echo "The installation was interupted because there is no know package manager."
+		echo "The installation was interupted because there is no known package manager."
 	fi
 }
 
