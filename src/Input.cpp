@@ -1,7 +1,5 @@
 #include "Input.h"
 
-#define KEYS_COUNT (1<<16)
-
 bool Input::_keyState[KEYS_COUNT];
 bool Input::_lastKeyState[KEYS_COUNT];
 bool Input::_lastMouseState[4];
@@ -11,7 +9,7 @@ Vector2 Input::_resizeEvent (Vector2::Zero);
 
 void Input::UpdateState ()
 {
-	for (int i=0;i<255;i++) {
+	for (int i=0;i<KEYS_COUNT;i++) {
 		_lastKeyState [i] = _keyState [i];
 	}
 
@@ -44,7 +42,7 @@ void Input::UpdateState ()
 				if ((int)event.key.keysym.sym >= KEYS_COUNT) {
 					break;
 				}
-				_keyState[(int)event.key.keysym.sym] = true;
+				_keyState[(int)event.key.keysym.sym] = false;
                 break;
             case SDL_MOUSEBUTTONDOWN:
 				_mouseState [(int)event.button.button] = true;

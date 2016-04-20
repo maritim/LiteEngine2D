@@ -9,7 +9,7 @@
 	#include <SDL.h>
 #endif
 
-#define KEYS_COUNT (1<<16)
+#define KEYS_COUNT 256
 
 class Input
 {
