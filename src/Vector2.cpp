@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <sstream>
 
 #include "Vector2.h"
 
@@ -189,9 +190,9 @@ std::istream &operator>>(std::istream &in, Vector2 &v) {
 
 std::string Vector2::ToString () const
 {
-	std::string result = std::to_string (_x) + ",";
-	result += std::to_string (_y);
-	result = "(" + result + ")";
+	std::ostringstream ss;
 
-	return result;
+	ss << "(" << _x << "," << _y << ")";
+
+	return ss.str() ;
 }
