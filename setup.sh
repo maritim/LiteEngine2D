@@ -1,29 +1,76 @@
 #!/bin/bash
 
-function InstallDependency
+# Installing Dependencies Function
+
+function InstallDependenciesPacman
 {
-	if [ -f /etc/debian_version ]; then
-		sudo apt-get install --yes $1
-	elif [ -f /etc/arch-release ]; then
-		sudo pacman -S $1
-	elif [ -f /etc/fedora-ralease ]; then
-		sudo yum install $1
-	else
-		echo "The installation was interupted because there is no known package manager."
-	fi
-}
+	echo "Attempting to install dependencies using pacman"
 
-if [[ `uname` == "Linux" ]]; then
-	dep_ubuntu="libsdl2-image-dev libsdl2-dev"
+	dep="gcc g++ make cmake sdl2 sdl2_image"
 
-	for pkg in $dep_ubuntu; do
+	for pkg in $dep; do
 		if dpkg -l "$pkg" &> /dev/null; then
 			echo "Package '$pkg' already installed. Do nothing."
 		else
 			echo "Package '$pkg' is not installed. Installing..."
-			InstallDependency $pkg
+			sudo pacman -Syy $pkg
 		fi
 	done
+
+	echo "Dependencies installed"
+}
+
+function InstallDependenciesAptGet
+{
+	echo "Attempting to install dependencies using apt-get"
+
+	dep="build-essential cmake libsdl2-image-dev libsdl2-dev"
+
+	for pkg in $dep; do
+		if dpkg -l "$pkg" &> /dev/null; then
+			echo "Package '$pkg' already installed. Do nothing."
+		else
+			echo "Package '$pkg' is not installed. Installing..."
+			sudo apt-get install -y $pkg
+		fi
+	done	
+
+	echo "Dependencies installed"
+}
+
+function InstallDependenciesYum
+{
+	echo "Attempting to install dependencies using yum"
+
+	dep="gcc gcc-c++ make cmake sdl2-image-devel sdl2-devel"
+
+	for pkg in $dep; do
+		if dpkg -l "$pkg" &> /dev/null; then
+			echo "Package '$pkg' already installed. Do nothing."
+		else
+			echo "Package '$pkg' is not installed. Installing..."
+			sudo apt-get install -y $pkg
+		fi
+	done	
+
+	echo "Dependencies installed"
+}
+
+# Main
+
+if [[ `uname` == "Linux" ]]; then
+
+	#search for package manager
+	if type pacman 2> /dev/null; then	
+		InstallDependenciesPacman
+	elif type apt-get 2> /dev/null; then
+		InstallDependenciesAptGet
+	elif type yum 2> /dev/null; then
+		InstallDependenciesYum
+	else
+		echo "ERROR: Unknown distribution. You will have to install the dependencies manually."
+		exit;
+	fi
 
 elif [[ `uname` == "Darwin"* ]]; then
 

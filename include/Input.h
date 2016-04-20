@@ -9,7 +9,11 @@
 	#include <SDL.h>
 #endif
 
-#define KEYS_COUNT 256
+/*
+ * Maybe change this into a Hash Table?
+*/
+
+#define KEYS_COUNT (1<<8)
 
 class Input
 {
